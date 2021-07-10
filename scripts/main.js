@@ -26,31 +26,31 @@ const humanPlayer = (str) => {
     }
     // ==========End of human player funtion =========================
 
-// ==========create playGame funtion =========================
+// ==========create checkWinner funtion to compare the selection of player=========================
 const checkWinner = () => {
-    let message = "";
-    let humanInput = humanPlayer()
-    let computerInput = computerPlayer();
-    if (humanInput === 'rock' && computerInput === 'scissors') {
-        console.log("You win")
-        totalHumanWin += 1;
-    } else if (humanInput === 'paper' && computerInput === 'rock') {
-        console.log("You win")
-        totalHumanWin += 1;
-    } else if (humanInput === 'scissors' && computerInput === 'paper') {
-        console.log("You win")
-        totalHumanWin += 1;
-    } else if (humanInput === computerInput) {
-        console.log("It's a tie")
-    } else {
-        console.log("Computer wins")
-        totalComputerWin += 1;
+        let message = "";
+        let humanInput = humanPlayer()
+        let computerInput = computerPlayer();
+        if (humanInput === 'rock' && computerInput === 'scissors') {
+            console.log("You win")
+            totalHumanWin += 1;
+        } else if (humanInput === 'paper' && computerInput === 'rock') {
+            console.log("You win")
+            totalHumanWin += 1;
+        } else if (humanInput === 'scissors' && computerInput === 'paper') {
+            console.log("You win")
+            totalHumanWin += 1;
+        } else if (humanInput === computerInput) {
+            console.log("It's a tie")
+        } else {
+            console.log("Computer wins")
+            totalComputerWin += 1;
+        }
+
     }
+    // ========== End of checkWinner funtion to compare the selection of player=========================
 
-
-    // return totalHumanWin
-}
-
+//======== Recursive function to call the play the game number of times.
 const playGame = () => {
     checkWinner();
     if (totalHumanWin === 5 || totalComputerWin === 5) {
@@ -59,12 +59,9 @@ const playGame = () => {
         playGame();
     }
 }
+
+//======= End of Recursive function to call the play the game number of times.
 playGame();
-// playGame();
-// playGame();
-// playGame();
-// playGame();
-// playGame();
 
 console.log(totalHumanWin);
 console.log(totalComputerWin);
