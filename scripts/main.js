@@ -60,7 +60,7 @@ const playGame = () => {
     }
 }
 
-//======= End of Recursive function to call the play the game number of times.
+//======= End of Recursive function to call the play the game number of  times.
 playGame();
 
 console.log(totalHumanWin);
