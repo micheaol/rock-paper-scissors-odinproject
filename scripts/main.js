@@ -59,7 +59,7 @@ const playGame = () => {
         playGame();
     }
 }
-doublePlay();
+playGame();
 // playGame();
 // playGame();
 // playGame();
