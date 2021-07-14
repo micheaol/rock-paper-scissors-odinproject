@@ -12,7 +12,7 @@ const computerPlayer = () => {
             return selection[numberGenerator];
         }
     }
-    // ==========End of computer player funtion =========================
+    // =============End of computer player funtion =========================
 
 // ==========create Human player funtion =========================
 const humanPlayer = (str) => {
