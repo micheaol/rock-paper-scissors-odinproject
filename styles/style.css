@@ -23,20 +23,22 @@ body {
 img {
     max-width: 25vw;
     max-height: 55vh;
+    align-items: center;
 }
 
 .container {
     display: flex;
+    justify-content: space-between;
+    margin-top: 75px;
 }
 
 .left-pan {
-    flex: 50%;
+    flex: 65%;
     padding: 10px;
     margin-left: 35px;
 }
 
 .right-pan {
-    flex: 50%;
     padding: 15px;
 }
 
