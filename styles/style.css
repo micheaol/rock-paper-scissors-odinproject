@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600;1,700&family=Yomogi&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 
+body {
+    background-image: url('../images/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+.title h1 {
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 50px;
+}
+
+img {
+    max-width: 25vw;
+    max-height: 55vh;
+}
+
+.container {
+    display: flex;
+}
+
+.left-pan {
+    flex: 50%;
+    padding: 10px;
+    margin-left: 35px;
+}
+
+.right-pan {
+    flex: 50%;
+    padding: 15px;
+}
+
+@media (max-width: 800px) {
+    .right-pan,
+    .left-pan {
+        flex: 100%;
+    }
+}
