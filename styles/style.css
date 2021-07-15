@@ -91,6 +91,9 @@ img {
 
 /* End of styling the images for the players */
 
+
+/* Styling for the winners display */
+
 #message-display {
     font-weight: bold;
     width: auto;
@@ -112,6 +115,9 @@ img {
     height: 50px;
     width: 300px;
 }
+
+
+/* End of Styling for the winners display */
 
 
 /* Left pan for the image */
@@ -176,5 +182,231 @@ img {
         position: absolute;
         right: 15%;
         bottom: -15%;
+    }
+}
+
+@media(max-width: 450px) {
+    #message-display {
+        font-weight: bold;
+        width: auto;
+        font-size: medium;
+        justify-content: center;
+        height: fit-content;
+        margin: 1.5%;
+        display: block;
+    }
+    .result {
+        border-radius: 10px;
+        text-align: center;
+        position: absolute;
+        left: 10%;
+        bottom: 100%;
+        padding: 15px;
+        padding-bottom: 35px;
+        border: 5px solid rgb(151, 148, 148);
+        height: 3px;
+        width: 200px;
+    }
+    .player-table {
+        border: blue solid;
+        position: absolute;
+        left: -10%;
+        bottom: -95%;
+        text-align: center;
+        max-width: 45%;
+        font-size: small;
+        /* max-width: 50vw; */
+    }
+    .cpu-table {
+        border: rgb(255, 0, 149) solid;
+        position: absolute;
+        right: -10%;
+        bottom: -95%;
+        text-align: center;
+        max-width: 45%;
+        font-size: small;
+    }
+    .player-table button img {
+        max-width: 5vw;
+    }
+    .cpu-table button img {
+        max-width: 5vw;
+    }
+    #player-score {
+        padding-top: 10px;
+        border: 5px solid rgb(207, 33, 33);
+        height: 50px;
+        width: 50px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    #cpu-score {
+        padding-top: 10px;
+        border: 5px solid rgb(201, 198, 198);
+        height: 50px;
+        width: 50px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 370px) {
+    .player-table {
+        border: blue solid;
+        position: absolute;
+        left: -5%;
+        bottom: -110%;
+        text-align: center;
+        max-width: 45%;
+        font-size: small;
+        /* max-width: 50vw; */
+    }
+    .cpu-table {
+        border: rgb(255, 0, 149) solid;
+        position: absolute;
+        right: -5%;
+        bottom: -110%;
+        text-align: center;
+        max-width: 45%;
+        font-size: small;
+    }
+    .player-table button img {
+        max-width: 5vw;
+    }
+    .cpu-table button img {
+        max-width: 5vw;
+    }
+    #player-score {
+        padding-top: 10px;
+        border: 5px solid rgb(207, 33, 33);
+        height: 25px;
+        width: 35px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    #cpu-score {
+        padding-top: 10px;
+        border: 5px solid rgb(201, 198, 198);
+        height: 25px;
+        width: 35px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 375px) {
+    .player-table {
+        border: blue solid;
+        position: absolute;
+        left: -5%;
+        bottom: -110%;
+        text-align: center;
+        max-width: 45%;
+        font-size: small;
+        /* max-width: 50vw; */
+    }
+    .cpu-table {
+        border: rgb(255, 0, 149) solid;
+        position: absolute;
+        right: -5%;
+        bottom: -110%;
+        text-align: center;
+        max-width: 45%;
+        font-size: small;
+    }
+    .player-table button img {
+        max-width: 5vw;
+    }
+    .cpu-table button img {
+        max-width: 5vw;
+    }
+    #player-score {
+        padding-top: 10px;
+        border: 5px solid rgb(207, 33, 33);
+        height: 25px;
+        width: 35px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    #cpu-score {
+        padding-top: 10px;
+        border: 5px solid rgb(201, 198, 198);
+        height: 25px;
+        width: 35px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 768px) {
+    .player-table {
+        border: blue solid;
+        position: absolute;
+        left: 10%;
+        bottom: -60%;
+        text-align: center;
+        max-width: 50%;
+        font-size: small;
+        /* max-width: 50vw; */
+    }
+    .cpu-table {
+        border: rgb(255, 0, 149) solid;
+        position: absolute;
+        right: 20%;
+        bottom: -60%;
+        text-align: center;
+        max-width: 50%;
+        font-size: small;
+    }
+    .player-table button img {
+        max-width: 5vw;
+    }
+    .cpu-table button img {
+        max-width: 5vw;
+    }
+    #player-score {
+        padding-top: 30px;
+        border: 5px solid rgb(207, 33, 33);
+        height: 50px;
+        width: 55px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    #cpu-score {
+        padding-top: 30px;
+        border: 5px solid rgb(201, 198, 198);
+        height: 50px;
+        width: 55px;
+        margin-left: 25%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    #message-display {
+        font-weight: bold;
+        width: auto;
+        font-size: medium;
+        justify-content: center;
+        height: fit-content;
+        margin: 1.5%;
+        display: block;
+    }
+    .result {
+        border-radius: 10px;
+        text-align: center;
+        position: absolute;
+        left: 30%;
+        bottom: 100%;
+        padding: 15px;
+        padding-bottom: 35px;
+        border: 5px solid rgb(151, 148, 148);
+        height: 3px;
+        width: 200px;
     }
 }

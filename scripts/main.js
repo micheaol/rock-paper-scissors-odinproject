@@ -52,6 +52,14 @@ const humanPlayer = () => {
                 messageDisplay.textContent = message;
                 cpuScore.textContent = totalComputerWin;
                 humanScore.textContent = totalHumanWin;
+                if (totalHumanWin === 5 || totalComputerWin === 5) {
+                    button.disabled = true;
+                    if (totalComputerWin > totalHumanWin) {
+                        messageDisplay.textContent = "OH Computer Wins"
+                    } else {
+                        messageDisplay.textContent = "Wow!! You won!!"
+                    }
+                }
 
             });
         });
