@@ -115,7 +115,7 @@ img {
 
 /* End of Right pan for the image */
 
-.player-score {
+#player-score {
     padding-top: 25px;
     border: 5px solid red;
     height: 50px;
@@ -124,7 +124,7 @@ img {
     border-radius: 5px;
 }
 
-.cpu-score {
+#cpu-score {
     padding-top: 25px;
     border: 5px solid red;
     height: 50px;

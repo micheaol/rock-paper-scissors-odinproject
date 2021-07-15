@@ -3,6 +3,8 @@ const selection = ["rock", "paper", "scissors"];
 let totalHumanWin = 0;
 let totalComputerWin = 0;
 const buttons = document.querySelectorAll('button');
+let cpuScore = document.getElementById('cpu-score');
+let humanScore = document.getElementById('player-score')
 
 // ==========create computer player funtion =========================
 const computerPlayer = () => {
@@ -40,9 +42,10 @@ const humanPlayer = () => {
                     console.log("Computer wins")
                     totalComputerWin += 1;
                 }
+                cpuScore.textContent = totalComputerWin;
+                humanScore.textContent = totalHumanWin;
             });
         });
-
     }
     // ==========End of human player funtion =========================
 
@@ -72,19 +75,20 @@ const humanPlayer = () => {
 // ========== End of checkWinner funtion to compare the selection of player=========================
 
 //======== Recursive function to call the play the game 5 number of times.
-const playGame = () => {
-    humanPlayer();
-    if (totalHumanWin === 5 || totalComputerWin === 5) {
-
-    } else {
-        playGame();
-    }
-}
+// const playGame = () => {
+//     humanPlayer();
+//     if (totalHumanWin === 5 || totalComputerWin === 5) {
+//         break;
+//     }
+//     // else {
+//     //     playGame();
+//     // }
+// }
 
 //======= End of Recursive function to call the play the game number of  times.
 // checkWinner();
 
-playGame();
+humanPlayer();
 // console.log(totalComputerWin);
 
 // const buttons = document.querySelectorAll('button');
