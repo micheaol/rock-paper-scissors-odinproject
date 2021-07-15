@@ -20,11 +20,20 @@ body {
     font-size: 50px;
 }
 
+
+/* Player and CPU images styling  */
+
 img {
     max-width: 25vw;
     max-height: 55vh;
     align-items: center;
 }
+
+
+/* End of Player and CPU images styling  */
+
+
+/* Main container for all */
 
 .container {
     position: relative;
@@ -35,19 +44,51 @@ img {
     margin-right: 50px;
 }
 
+
+/* End of Main container for all */
+
+
+/* styling the inner content that display the buttons for player */
+
 .player-table {
     border: blue solid;
     position: absolute;
-    left: 20%;
-    bottom: 25%;
+    left: 25%;
+    bottom: 20%;
 }
+
+
+/* End of styling the inner content that display the buttons for player */
+
+
+/* styling the images for the players */
+
+.player-table button img {
+    max-width: 5vw;
+}
+
+.cpu-table button img {
+    max-width: 5vw;
+}
+
+
+/* End of styling the images for the players */
+
+
+/* styling the inner content that display the buttons for CPU */
 
 .cpu-table {
     border: blue solid;
     position: absolute;
-    right: 20%;
-    bottom: 25%;
+    right: 25%;
+    bottom: 20%;
 }
+
+
+/* End of styling the inner content that display the buttons for CPU */
+
+
+/* Left pan for the image */
 
 .left-pan {
     /* position: relative; */
@@ -56,14 +97,38 @@ img {
     margin-left: 35px;
 }
 
+
+/* End of Left pan for the image */
+
+
+/* Right pan for the image */
+
 .right-pan {
     /* position: relative; */
     padding: 15px;
 }
 
+
+/* End of Right pan for the image */
+
+
+/* Media query for smaller devies */
+
 @media (max-width: 800px) {
     .right-pan,
     .left-pan {
         flex: 100%;
+    }
+    .player-table {
+        border: blue solid;
+        position: absolute;
+        left: 15%;
+        bottom: -15%;
+    }
+    .cpu-table {
+        border: blue solid;
+        position: absolute;
+        right: 15%;
+        bottom: -15%;
     }
 }
