@@ -4,7 +4,8 @@ let totalHumanWin = 0;
 let totalComputerWin = 0;
 const buttons = document.querySelectorAll('button');
 let cpuScore = document.getElementById('cpu-score');
-let humanScore = document.getElementById('player-score')
+let humanScore = document.getElementById('player-score');
+let messageDisplay = document.getElementById('message-display');
 
 // ==========create computer player funtion =========================
 const computerPlayer = () => {
@@ -20,6 +21,7 @@ const computerPlayer = () => {
 
 // ==========create  humanPlayer funtion =========================
 const humanPlayer = () => {
+        let message = "";
         let humanInput;
         let computerInput = computerPlayer();
         buttons.forEach((button) => {
@@ -28,22 +30,29 @@ const humanPlayer = () => {
 
                 // console.log(userClick)
                 if (humanInput === 'rock' && computerInput === 'scissors') {
-                    console.log("You win")
+                    message = "You Win!!!"
+                    console.log(message)
                     totalHumanWin += 1;
                 } else if (humanInput === 'paper' && computerInput === 'rock') {
-                    console.log("You win")
+                    message = "You Win!!!"
+                    console.log(message)
                     totalHumanWin += 1;
                 } else if (humanInput === 'scissors' && computerInput === 'paper') {
-                    console.log("You win")
+                    message = "You Win!!!"
+                    console.log(message)
                     totalHumanWin += 1;
                 } else if (humanInput === computerInput) {
-                    console.log("It's a tie")
+                    message = "It's a tie!!!"
+                    console.log(message)
                 } else {
-                    console.log("Computer wins")
+                    message = "Computer wins"
+                    console.log(message)
                     totalComputerWin += 1;
                 }
+                messageDisplay.textContent = message;
                 cpuScore.textContent = totalComputerWin;
                 humanScore.textContent = totalHumanWin;
+
             });
         });
     }
@@ -75,15 +84,10 @@ const humanPlayer = () => {
 // ========== End of checkWinner funtion to compare the selection of player=========================
 
 //======== Recursive function to call the play the game 5 number of times.
-// const playGame = () => {
-//     humanPlayer();
-//     if (totalHumanWin === 5 || totalComputerWin === 5) {
-//         break;
-//     }
-//     // else {
-//     //     playGame();
-//     // }
-// }
+const playGame = () => {
+    humanPlayer();
+
+}
 
 //======= End of Recursive function to call the play the game number of  times.
 // checkWinner();
