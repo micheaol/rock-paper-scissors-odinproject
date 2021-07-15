@@ -51,6 +51,8 @@ img {
 /* styling the inner content that display the buttons for player */
 
 .player-table {
+    border-radius: 5px;
+    text-align: center;
     border: blue solid;
     position: absolute;
     left: 25%;
@@ -78,6 +80,8 @@ img {
 /* styling the inner content that display the buttons for CPU */
 
 .cpu-table {
+    border-radius: 5px;
+    text-align: center;
     border: blue solid;
     position: absolute;
     right: 25%;
@@ -110,6 +114,24 @@ img {
 
 
 /* End of Right pan for the image */
+
+.player-score {
+    padding-top: 25px;
+    border: 5px solid red;
+    height: 50px;
+    width: 50px;
+    margin-left: 35%;
+    border-radius: 5px;
+}
+
+.cpu-score {
+    padding-top: 25px;
+    border: 5px solid red;
+    height: 50px;
+    width: 50px;
+    margin-left: 35%;
+    border-radius: 5px;
+}
 
 
 /* Media query for smaller devies */

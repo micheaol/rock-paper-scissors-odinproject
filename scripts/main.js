@@ -51,17 +51,25 @@ const checkWinner = () => {
     // ========== End of checkWinner funtion to compare the selection of player=========================
 
 //======== Recursive function to call the play the game 5 number of times.
-// const playGame = () => {
-//     checkWinner();
-//     if (totalHumanWin === 5 || totalComputerWin === 5) {
+const playGame = () => {
+    checkWinner();
+    if (totalHumanWin === 5 || totalComputerWin === 5) {
 
-//     } else {
-//         playGame();
-//     }
-// }
+    } else {
+        playGame();
+    }
+}
 
 //======= End of Recursive function to call the play the game number of  times.
 playGame();
 
 console.log(totalHumanWin);
 console.log(totalComputerWin);
+
+const rock = document.getElementById('rock');
+
+rock.addEventListener('click', function(e) {
+    if (e.detail === 1) {
+        console.log('rock')
+    }
+})
