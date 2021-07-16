@@ -10,13 +10,22 @@ let showReset = document.getElementById('reset-btn');
 showReset.style.visibility = 'hidden';
 
 // ==========create computer player funtion =========================
+const usedIndexes = new Set();
 const computerPlayer = () => {
+        let max = selection.length;
+        let min = 0;
         // create a random generator to generate number
-        let numberGenerator = Math.floor(Math.random() * 2);
-        // loop through the selection to make a choice for the computer
-        for (let i = 0; i < selection.length; i++) {
+        let numberGenerator = Math.floor(Math.random() * (max - min) + min); //Math.floor(Math.random() * 2);
+        if (usedIndexes.has(numberGenerator)) {
+            return this.computerPlayer(max, min);
+        } else {
+            usedIndexes.add(numberGenerator);
             return selection[numberGenerator];
         }
+        // loop through the selection to make a choice for the computer
+        // for (let i = 0; i < selection.length; i++) {
+        //     return selection[numberGenerator];
+        // }
     }
     // =============End of computer player funtion =========================
 
@@ -64,7 +73,6 @@ const humanPlayer = () => {
                         messageDisplay.textContent = "Wow!! You won!!"
                     }
                 }
-
             });
         });
     }
@@ -98,9 +106,6 @@ const humanPlayer = () => {
 //======== Recursive function to call the play the game 5 number of times.
 const playGame = () => {
     humanPlayer();
-    for (let i = 5; i < totalHumanWin || i < totalComputerWin; i++) {
-        return;
-    }
 
 }
 
