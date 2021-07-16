@@ -168,6 +168,7 @@ img {
     left: 41%;
     top: 90%;
     max-height: 20vh;
+    /* visibility: hidden; */
 }
 
 

@@ -6,6 +6,8 @@ const buttons = document.querySelectorAll('button');
 let cpuScore = document.getElementById('cpu-score');
 let humanScore = document.getElementById('player-score');
 let messageDisplay = document.getElementById('message-display');
+let showReset = document.getElementById('reset-btn');
+showReset.style.visibility = 'hidden';
 
 // ==========create computer player funtion =========================
 const computerPlayer = () => {
@@ -54,6 +56,8 @@ const humanPlayer = () => {
                 humanScore.textContent = totalHumanWin;
                 if (totalHumanWin === 5 || totalComputerWin === 5) {
                     button.disabled = true;
+                    showReset.style.visibility = 'visible';
+
                     if (totalComputerWin > totalHumanWin) {
                         messageDisplay.textContent = "OH Computer Wins"
                     } else {
