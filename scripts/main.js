@@ -27,10 +27,11 @@ const humanPlayer = () => {
             button.addEventListener('click', () => {
                 clickButton = button.id;
                 console.log(clickButton);
+                return clickButton
             })
 
         });
-
+        // console.log(clickButton);
     }
     // ==========End of human player funtion =========================
 
@@ -38,22 +39,31 @@ const humanPlayer = () => {
 const checkWinner = () => {
         let message = "";
         let humanInput = humanPlayer()
+        console.log(humanInput);
         let computerInput = computerPlayer();
         if (humanInput === 'rock' && computerInput === 'scissors') {
-            console.log("You win")
+            message = "You win";
+            console.log(message)
             totalHumanWin += 1;
         } else if (humanInput === 'paper' && computerInput === 'rock') {
-            console.log("You win")
+            message = "You win";
+            console.log(message)
             totalHumanWin += 1;
         } else if (humanInput === 'scissors' && computerInput === 'paper') {
-            console.log("You win")
+            message = "You win";
+            console.log(message)
             totalHumanWin += 1;
         } else if (humanInput === computerInput) {
-            console.log("It's a tie")
+            message = "It's a tie";
+            console.log(message);
         } else {
-            console.log("Computer wins")
+            message = "Computer wins"
+            console.log(message)
             totalComputerWin += 1;
         }
+        messageDisplay.textContent = message;
+        humanScore.textContent = totalHumanWin;
+        cpuScore.textContent = totalComputerWin;
 
     }
     // ========== End of checkWinner funtion to compare the selection of player=========================
