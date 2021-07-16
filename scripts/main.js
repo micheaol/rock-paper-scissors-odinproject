@@ -10,22 +10,17 @@ let showReset = document.getElementById('reset-btn');
 showReset.style.visibility = 'hidden';
 
 // ==========create computer player funtion =========================
-const usedIndexes = new Set();
+
 const computerPlayer = () => {
-        let max = selection.length;
-        let min = 0;
-        // create a random generator to generate number
-        let numberGenerator = Math.floor(Math.random() * (max - min) + min); //Math.floor(Math.random() * 2);
-        if (usedIndexes.has(numberGenerator)) {
-            return this.computerPlayer(max, min);
-        } else {
-            usedIndexes.add(numberGenerator);
-            return selection[numberGenerator];
+        let exists = [];
+        randomNumber;
+        for (let i = 0; i < selection.length; i++) {
+            do {
+                randomNumber = Math.floor(Math.random() * 3)
+            } while (exists[randomNumber]);
+            exists[randomNumber] = true;
+            selection[randomNumber];
         }
-        // loop through the selection to make a choice for the computer
-        // for (let i = 0; i < selection.length; i++) {
-        //     return selection[numberGenerator];
-        // }
     }
     // =============End of computer player funtion =========================
 
