@@ -12,15 +12,14 @@ showReset.style.visibility = 'hidden';
 // ==========create computer player funtion =========================
 
 const computerPlayer = () => {
-        let exists = [];
-        randomNumber;
+        let randomNumber = Math.floor(Math.random() * 1 + 2) + 1;
         for (let i = 0; i < selection.length; i++) {
-            do {
-                randomNumber = Math.floor(Math.random() * 3)
-            } while (exists[randomNumber]);
-            exists[randomNumber] = true;
-            selection[randomNumber];
+            if (randomNumber === selection[i]) {
+                selection[randomNumber - 1]
+            }
+            return selection[randomNumber - 1]
         }
+
     }
     // =============End of computer player funtion =========================
 
