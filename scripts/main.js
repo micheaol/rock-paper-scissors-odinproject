@@ -12,7 +12,7 @@ showReset.style.visibility = 'hidden';
 // ==========create computer player funtion =========================
 const computerPlayer = () => {
         // create a random generator to generate number
-        let numberGenerator = Math.round(Math.random() * 2);
+        let numberGenerator = Math.floor(Math.random() * 2);
         // loop through the selection to make a choice for the computer
         for (let i = 0; i < selection.length; i++) {
             return selection[numberGenerator];
@@ -33,22 +33,22 @@ const humanPlayer = () => {
                 // console.log(userClick)
                 if (humanInput === 'rock' && computerInput === 'scissors') {
                     message = "You Win!!!"
-                    console.log(message)
+                        // console.log(message)
                     totalHumanWin += 1;
                 } else if (humanInput === 'paper' && computerInput === 'rock') {
                     message = "You Win!!!"
-                    console.log(message)
+                        // console.log(message)
                     totalHumanWin += 1;
                 } else if (humanInput === 'scissors' && computerInput === 'paper') {
                     message = "You Win!!!"
-                    console.log(message)
+                        // console.log(message)
                     totalHumanWin += 1;
                 } else if (humanInput === computerInput) {
                     message = "It's a tie!!!"
-                    console.log(message)
+                        // console.log(message)
                 } else {
                     message = "Computer wins"
-                    console.log(message)
+                        // console.log(message)
                     totalComputerWin += 1;
                 }
                 messageDisplay.textContent = message;
@@ -98,13 +98,16 @@ const humanPlayer = () => {
 //======== Recursive function to call the play the game 5 number of times.
 const playGame = () => {
     humanPlayer();
+    for (let i = 5; i < totalHumanWin || i < totalComputerWin; i++) {
+        return;
+    }
 
 }
 
 //======= End of Recursive function to call the play the game number of  times.
 // checkWinner();
 
-humanPlayer();
+playGame();
 // console.log(totalComputerWin);
 
 // const buttons = document.querySelectorAll('button');
