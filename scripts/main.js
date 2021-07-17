@@ -24,14 +24,35 @@ let cpuPaper = document.querySelector('#cpu-paper');
 let cpuScissors = document.querySelector('#cpu-scissors');
 showReset.style.visibility = 'hidden';
 
-
+//========== sound function for button click==========================
 function clickButton() {
     const clickSound = document.querySelector('#click-audio');
     clickSound.currentTime = 0;
     clickSound.play();
 }
+//========== End of sound function for button click==========================
 
-// ==========create computer player funtion =========================
+//========== sound function for player wins click==========================
+function playerSound() {
+    const romanSound = document.querySelector('#win-audio');
+    romanSound.play();
+}
+//========== End of sound function for player win==========================
+
+//========== sound function for CPU win ==========================
+function lostSound() {
+    const drewSound = document.querySelector('#lose-audio');
+    drewSound.play();
+}
+//========== End of sound function for CPU win ==========================
+//======================audio to start the game===================================
+window.onload = function() {
+        const loadSound = document.querySelector('#start-bell');
+        loadSound.play();
+
+    }
+    //======================audio to start the game===================================
+    // ==========create computer player funtion =========================
 const computerPlayer = () => {
         // create a random generator to generate number
         let numberGenerator = Math.round(Math.random() * 2);
@@ -149,9 +170,9 @@ function playRound(playerSelection) {
             break;
     }
 }
-
+// ================== loop through the button============================
 buttons.forEach(button => button.addEventListener('click', () => {
-    
+
     clickButton();
     playerSelection = button.value;
 
@@ -189,11 +210,13 @@ buttons.forEach(button => button.addEventListener('click', () => {
 
 function declearWinner() {
     if (totalHumanWin > totalComputerWin) {
-        messageDisplay.textContent = "You won";
+        playerSound();
+        messageDisplay.textContent = "Game over!! Roman Reigns Wins";
         resultDisplay.style.backgroundColor = 'green';
 
     } else {
-        messageDisplay.textContent = "Computer Won!"
+        lostSound()
+        messageDisplay.textContent = "Game over!! Drew McinTyre Wins"
         resultDisplay.style.backgroundColor = 'red'
     }
 }
