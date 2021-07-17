@@ -27,6 +27,7 @@ showReset.style.visibility = 'hidden';
 
 function clickButton() {
     const clickSound = document.querySelector('#click-audio');
+    clickSound.currentTime = 0;
     clickSound.play();
 }
 
@@ -150,6 +151,7 @@ function playRound(playerSelection) {
 }
 
 buttons.forEach(button => button.addEventListener('click', () => {
+    
     clickButton();
     playerSelection = button.value;
 
