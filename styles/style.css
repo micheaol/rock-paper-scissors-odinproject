@@ -25,8 +25,8 @@ body {
     height: 40%;
     padding: 0;
     margin: 0.5em;
-    border: 2px solid rgba(221, 75, 31, 0.976);
-    box-shadow: 1px rgba(17, 5, 1, 0.976);
+    border: 5px solid rgba(221, 75, 31, 0.976);
+    box-shadow: 5px rgba(17, 5, 1, 0.976);
     border-radius: 15px;
 }
 
@@ -35,8 +35,8 @@ body {
     height: 40%;
     padding: 0;
     margin: 0.5em;
-    border: 2px solid rgba(221, 75, 31, 0.976);
-    box-shadow: 1px rgba(17, 5, 1, 0.976);
+    border: 5px solid rgba(221, 75, 31, 0.976);
+    box-shadow: 5px rgba(17, 5, 1, 0.976);
     border-radius: 15px;
 }
 
@@ -363,7 +363,7 @@ img {
 @media (max-width: 375px) {
     #player-score {
         padding-top: 10px;
-        border: 5px solid rgb(207, 17, 17);
+        border: rgb(196, 191, 191) solid 5px;
         height: 100%;
         width: 30px;
         margin-left: 35%;
@@ -373,7 +373,7 @@ img {
     }
     #cpu-score {
         padding-top: 10px;
-        border: 5px solid rgb(69, 17, 190);
+        border: rgb(196, 191, 191) solid 5px;
         height: 100%;
         width: 30px;
         margin-left: 35%;
@@ -383,7 +383,7 @@ img {
     .player-table {
         border-radius: 5px;
         text-align: center;
-        border: rgb(48, 189, 84) solid 5px;
+        border: rgb(196, 191, 191) solid 5px;
         position: absolute;
         right: -55%;
         bottom: -150%;
@@ -394,7 +394,7 @@ img {
     .cpu-table {
         border-radius: 5px;
         text-align: center;
-        border: rgb(34, 32, 32) solid 5px;
+        border: rgb(196, 191, 191) solid 5px;
         position: absolute;
         right: 55%;
         bottom: -150%;
@@ -425,7 +425,7 @@ img {
 @media (max-width: 414px) {
     #player-score {
         padding-top: 10px;
-        border: 5px solid rgb(207, 17, 17);
+        border: rgb(196, 191, 191) solid 5px;
         height: 100%;
         width: 30px;
         margin-left: 35%;
@@ -435,7 +435,7 @@ img {
     }
     #cpu-score {
         padding-top: 10px;
-        border: 5px solid rgb(69, 17, 190);
+        border: rgb(196, 191, 191) solid 5px;
         height: 100%;
         width: 30px;
         margin-left: 35%;
@@ -445,7 +445,7 @@ img {
     .player-table {
         border-radius: 5px;
         text-align: center;
-        border: rgb(48, 189, 84) solid 5px;
+        border: rgb(196, 191, 191) solid 5px;
         position: absolute;
         right: -55%;
         bottom: -150%;
@@ -455,7 +455,7 @@ img {
     .cpu-table {
         border-radius: 5px;
         text-align: center;
-        border: rgb(34, 32, 32) solid 5px;
+        border: rgb(196, 191, 191) solid 5px;
         position: absolute;
         right: 55%;
         bottom: -150%;

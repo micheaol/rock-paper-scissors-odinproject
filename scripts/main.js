@@ -25,6 +25,11 @@ let cpuScissors = document.querySelector('#cpu-scissors');
 showReset.style.visibility = 'hidden';
 
 
+function clickButton() {
+    const clickSound = document.querySelector('#click-audio');
+    clickSound.play();
+}
+
 // ==========create computer player funtion =========================
 const computerPlayer = () => {
         // create a random generator to generate number
@@ -145,6 +150,7 @@ function playRound(playerSelection) {
 }
 
 buttons.forEach(button => button.addEventListener('click', () => {
+    clickButton();
     playerSelection = button.value;
 
     roundWinner = playRound(playerSelection)
