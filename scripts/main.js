@@ -207,7 +207,7 @@ buttons.forEach(button => button.addEventListener('click', () => {
         showReset.style.visibility = 'visible';
     }
 }));
-
+//======================Declear winner function =========================
 function declearWinner() {
     if (totalHumanWin > totalComputerWin) {
         playerSound();
