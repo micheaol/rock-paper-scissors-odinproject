@@ -29,7 +29,6 @@ const humanPlayer = () => {
                 console.log(clickButton);
                 return clickButton
             })
-
         });
         // console.log(clickButton);
     }
