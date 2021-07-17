@@ -12,7 +12,8 @@ let cpuScore = document.getElementById('cpu-score');
 let humanScore = document.getElementById('player-score');
 let messageDisplay = document.getElementById('message-display');
 let showReset = document.getElementById('reset-btn');
-showReset.style.visibility = 'hidden';
+let resultDisplay = document.querySelector('.result')
+
 
 let playerScissors = document.querySelector('#player-scissors');
 let playerRock = document.querySelector('#player-rock');
@@ -21,7 +22,7 @@ let playerPaper = document.querySelector('#player-paper');
 let cpuRock = document.querySelector('#cpu-rock');
 let cpuPaper = document.querySelector('#cpu-paper');
 let cpuScissors = document.querySelector('#cpu-scissors');
-
+showReset.style.visibility = 'hidden';
 
 
 // ==========create computer player funtion =========================
@@ -174,13 +175,17 @@ buttons.forEach(button => button.addEventListener('click', () => {
 
         //To disable buttons once winner is decleared
         buttons.forEach(button => button.disabled = true);
+        showReset.style.visibility = 'visible';
     }
 }));
 
 function declearWinner() {
     if (totalHumanWin > totalComputerWin) {
         messageDisplay.textContent = "You won";
+        resultDisplay.style.backgroundColor = 'green';
+
     } else {
         messageDisplay.textContent = "Computer Won!"
+        resultDisplay.style.backgroundColor = 'red'
     }
 }
