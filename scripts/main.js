@@ -2,12 +2,27 @@
 const selection = ["rock", "paper", "scissors"];
 let totalHumanWin = 0;
 let totalComputerWin = 0;
-const buttons = document.querySelectorAll('button');
+let ties = 0;
+let roundWinner = '';
+let playerSelection = '';
+let humanInput;
+
+const buttons = document.querySelectorAll('.player-selection');
 let cpuScore = document.getElementById('cpu-score');
 let humanScore = document.getElementById('player-score');
 let messageDisplay = document.getElementById('message-display');
 let showReset = document.getElementById('reset-btn');
 showReset.style.visibility = 'hidden';
+
+let playerScissors = document.querySelector('#player-scissors');
+let playerRock = document.querySelector('#player-rock');
+let playerPaper = document.querySelector('#player-paper');
+
+let cpuRock = document.querySelector('#cpu-rock');
+let cpuPaper = document.querySelector('#cpu-paper');
+let cpuScissors = document.querySelector('#cpu-scissors');
+
+
 
 // ==========create computer player funtion =========================
 const computerPlayer = () => {
@@ -18,67 +33,154 @@ const computerPlayer = () => {
             return selection[numberGenerator];
         }
     }
-    // =============End of computer player funtion =========================
+    // ==========create  humanPlayer funtion =========================
+    //==============play round function ==============
+function playRound(playerSelection) {
+    let cpuSelection = computerPlayer();
 
-// ==========create Human player funtion =========================
-const humanPlayer = () => {
-        let clickButton;
-        buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-                clickButton = button.id;
-                console.log(clickButton);
-                return clickButton
-            })
-        });
-        // console.log(clickButton);
-    }
-    // ==========End of human player funtion =========================
+    switch (cpuSelection) {
+        case "scissors":
+            cpuScissors.setAttribute('class', 'cpu-selection-made')
+            cpuRock.setAttribute('class', 'cpu-selection');
+            cpuPaper.setAttribute('class', 'cpu-selection');
 
-// ==========create checkWinner funtion to compare the selection of player=========================
-const checkWinner = () => {
-        let message = "";
-        let humanInput = humanPlayer()
-        console.log(humanInput);
-        let computerInput = computerPlayer();
-        if (humanInput === 'rock' && computerInput === 'scissors') {
-            message = "You win";
-            console.log(message)
-            totalHumanWin += 1;
-        } else if (humanInput === 'paper' && computerInput === 'rock') {
-            message = "You win";
-            console.log(message)
-            totalHumanWin += 1;
-        } else if (humanInput === 'scissors' && computerInput === 'paper') {
-            message = "You win";
-            console.log(message)
-            totalHumanWin += 1;
-        } else if (humanInput === computerInput) {
-            message = "It's a tie";
-            console.log(message);
-        } else {
-            message = "Computer wins"
-            console.log(message)
-            totalComputerWin += 1;
-        }
-        messageDisplay.textContent = message;
-        humanScore.textContent = totalHumanWin;
-        cpuScore.textContent = totalComputerWin;
+            if (playerSelection === "rock") {
+                playerRock.setAttribute('class', 'player-selection-made')
+                playerPaper.setAttribute('class', 'player-selection')
+                playerScissors.setAttribute('class', 'player-selection')
 
-    }
-    // ========== End of checkWinner funtion to compare the selection of player=========================
+                messageDisplay.textContent = "You Win!"
+                return 'player';
 
-//======== Recursive function to call the play the game number of times.
-const playGame = () => {
-    checkWinner();
-    if (totalHumanWin === 5 || totalComputerWin === 5) {
+            } else if (playerSelection === "paper") {
+                playerPaper.setAttribute('class', 'player-selection-made')
+                playerRock.setAttribute('class', 'player-selection')
+                playerScissors.setAttribute('class', 'player-selection')
 
-    } else {
-        playGame();
+
+                messageDisplay.textContent = "You Lose!"
+                return "computer"
+
+            } else if (playerSelection === "scissors") {
+                playerScissors.setAttribute('class', 'player-selection-made')
+                playerRock.setAttribute('class', 'player-selection')
+                playerPaper.setAttribute('class', 'player-selection')
+
+                messageDisplay.textContent = "It's a tie"
+                return null;
+            }
+            break;
+        case "paper":
+            cpuPaper.setAttribute('class', 'cpu-selection-made');
+            cpuScissors.setAttribute('class', 'cpu-selection')
+            cpuRock.setAttribute('class', 'cpu-selection');
+
+
+            if (playerSelection === "rock") {
+                playerRock.setAttribute('class', 'player-selection-made')
+                playerPaper.setAttribute('class', 'player-selection')
+                playerScissors.setAttribute('class', 'player-selection')
+
+                messageDisplay.textContent = "You Lose!"
+                return 'computer'
+
+            } else if (playerSelection === "scissors") {
+                playerScissors.setAttribute('class', 'player-selection-made')
+                playerPaper.setAttribute('class', 'player-selection')
+                playerRock.setAttribute('class', 'player-selection')
+
+
+                messageDisplay.textContent = "You win!"
+                return 'player'
+
+            } else if (playerSelection === "paper") {
+                playerPaper.setAttribute('class', 'player-selection-made')
+                playerScissors.setAttribute('class', 'player-selection')
+                playerRock.setAttribute('class', 'player-selection')
+
+
+                messageDisplay.textContent = "It's a tie"
+                return null;
+            }
+            break;
+        case "rock":
+            cpuRock.setAttribute('class', 'cpu-selection-made');
+            cpuPaper.setAttribute('class', 'cpu-selection');
+            cpuScissors.setAttribute('class', 'cpu-selection')
+
+
+
+            if (playerSelection === "paper") {
+                playerPaper.setAttribute('class', 'player-selection-made')
+                playerRock.setAttribute('class', 'player-selection')
+                playerScissors.setAttribute('class', 'player-selection')
+
+                messageDisplay.textContent = "You Lose!"
+                return 'player'
+
+            } else if (playerSelection === "scissors") {
+                playerScissors.setAttribute('class', 'player-selection-made')
+                playerPaper.setAttribute('class', 'player-selection')
+                playerRock.setAttribute('class', 'player-selection')
+
+
+                messageDisplay.textContent = "You Lose!"
+                return 'computer'
+
+            } else if (playerSelection === "rock") {
+                playerPaper.setAttribute('class', 'player-selection')
+                playerScissors.setAttribute('class', 'player-selection')
+                playerRock.setAttribute('class', 'player-selection-made')
+
+
+                messageDisplay.textContent = "It's a tie"
+                return null;
+            }
+            break;
+
+        default:
+            break;
     }
 }
 
-//======= End of Recursive function to call the play the game number of  times.
-humanPlayer();
+buttons.forEach(button => button.addEventListener('click', () => {
+    playerSelection = button.value;
 
-// console.log(totalHumanWin);
-// console.log(totalComputerWin);
+    roundWinner = playRound(playerSelection)
+    switch (roundWinner) {
+        case "player":
+            totalHumanWin += 1;
+            break;
+        case "computer":
+            totalComputerWin += 1;
+            break;
+        case null:
+            ties++
+            break;
+
+        default:
+            break;
+    }
+
+    humanScore.textContent = totalHumanWin;
+    cpuScore.textContent = totalComputerWin;
+
+    console.log("player: " + totalHumanWin);
+    console.log("computer: " + totalComputerWin);
+
+
+    if (totalHumanWin === 5 || totalComputerWin === 5) {
+        declearWinner();
+
+        //To disable buttons once winner is decleared
+        buttons.forEach(button => button.disabled = true);
+    }
+}));
+
+function declearWinner() {
+    if (totalHumanWin > totalComputerWin) {
+        messageDisplay.textContent = "You won";
+    } else {
+        messageDisplay.textContent = "Computer Won!"
+    }
+}
