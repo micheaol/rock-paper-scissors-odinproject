@@ -195,8 +195,8 @@ buttons.forEach(button => button.addEventListener('click', () => {
     humanScore.textContent = totalHumanWin;
     cpuScore.textContent = totalComputerWin;
 
-    console.log("player: " + totalHumanWin);
-    console.log("computer: " + totalComputerWin);
+//     console.log("player: " + totalHumanWin);
+//     console.log("computer: " + totalComputerWin);
 
 
     if (totalHumanWin === 5 || totalComputerWin === 5) {
